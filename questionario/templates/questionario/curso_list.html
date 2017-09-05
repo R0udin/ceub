@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>Cursos</h1>
+<ul>
+    {% for curso in object_list %}
+    <li>{{ curso.curso_nome }}  :  
+    <a href="{% url "curso_edit" curso.id %}">{{ curso.curso_nome }}</a>
+    <a href="{% url "curso_delete" curso.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "curso_new" %}">New</a>
+
+{% endblock %}

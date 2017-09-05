@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>Ações</h1>
+<ul>
+    {% for acao in object_list %}
+    <li>{{ acao.titulo }}  :  
+    <a href="{% url "acao_edit" acao.id %}">{{ acao.titulo }}</a>
+    <a href="{% url "acao_delete" acao.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "acao_new" %}">New</a>
+
+{% endblock %}

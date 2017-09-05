@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>Questões</h1>
+<ul>
+    {% for questao in object_list %}
+    <li>{{ questao.enunciado1 }}  :  
+    <a href="{% url "questao_edit" questao.id %}">{{ questao.enunciado1 }}</a>
+    <a href="{% url "questao_delete" questao.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "questao_new" %}">New</a>
+
+{% endblock %}
